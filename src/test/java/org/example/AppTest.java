@@ -1,38 +1,33 @@
 package org.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
+public class AppTest {
+
     /**
-     * Create the test case
-     *
-     * @param testName name of the test case
+     * тест метода readCSV на чтение пустого файла
      */
-    public AppTest( String testName )
-    {
-        super( testName );
+    @Test
+    public void testEmptyFile() {
+        List<Person> people = App.readCSV("empty.csv", ';');
+        assertEquals(0, people.size());
     }
 
     /**
-     * @return the suite of tests being tested
+     * тест метода readCSV на чтение всех записей из файла
      */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void testReadCSVFile() {
+        List<Person> people = App.readCSV("foreign_names.csv", ';');
+        assertEquals(25898, people.size());
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
