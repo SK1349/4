@@ -11,5 +11,9 @@ public class Division {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Division{" + "ID=" + id + ", name = " + "}";
+    }
 
 }

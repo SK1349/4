@@ -10,11 +10,11 @@ public class Person {
 
     private Division division;
 
-    private double salary;
+    private int salary;
 
     private String birthDate;
 
-    public Person(int id, String name, String gender, Division division, double salary, String birthDate){
+    public Person(int id, String name, String gender, Division division, int salary, String birthDate){
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -23,7 +23,11 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Person{" + "ID=" + id + ", name=" + name +
+                ", gender=" + gender + ", division=" + division +
+                ", salary=" + salary + ", birthDate=" + birthDate + "}";
+    }
 
 }
